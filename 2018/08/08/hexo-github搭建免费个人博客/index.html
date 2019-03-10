@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>hexo+github搭建免费个人博客 | JUST DO IT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言有次看到个开源的播放器，去该作者的博客瞧了下，发现很酷，用的是hexo搭建的，比wordpress轻量，不用安装mysql，可以托管在GitHub上,不用管理服务器，更重要的还是免费的。做开发这么久了，还没总结过，容易忘记，正好搭建自己的个人博客记录下。 正文环境：windows搭建过程参考：hexo官网hexo从零开始到搭建完整 安装Git Bash下载后，修改安装目录一直next就好了。打">
+<meta name="keywords" content="Hexo,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github搭建免费个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/hexo-github搭建免费个人博客/index.html">
+<meta property="og:site_name" content="JUST DO IT">
+<meta property="og:description" content="前言有次看到个开源的播放器，去该作者的博客瞧了下，发现很酷，用的是hexo搭建的，比wordpress轻量，不用安装mysql，可以托管在GitHub上,不用管理服务器，更重要的还是免费的。做开发这么久了，还没总结过，容易忘记，正好搭建自己的个人博客记录下。 正文环境：windows搭建过程参考：hexo官网hexo从零开始到搭建完整 安装Git Bash下载后，修改安装目录一直next就好了。打">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-08T08:00:47.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github搭建免费个人博客">
+<meta name="twitter:description" content="前言有次看到个开源的播放器，去该作者的博客瞧了下，发现很酷，用的是hexo搭建的，比wordpress轻量，不用安装mysql，可以托管在GitHub上,不用管理服务器，更重要的还是免费的。做开发这么久了，还没总结过，容易忘记，正好搭建自己的个人博客记录下。 正文环境：windows搭建过程参考：hexo官网hexo从零开始到搭建完整 安装Git Bash下载后，修改安装目录一直next就好了。打">
+  
+    <link rel="alternate" href="/atom.xml" title="JUST DO IT" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://ws1.sinaimg.cn/large/006AnDiZgy1g0y0fqvvr3j304e04emx1.gif">
+    <h2 class="author">k9990009</h2>
+    <h3 class="description">Talk is cheap,Show me the code.</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>2</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-hexo-github搭建免费个人博客" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/08/hexo-github搭建免费个人博客/" class="article-date">
+  <time class="post-time" datetime="2018-08-08T02:35:01.000Z" itemprop="datePublished">
+    <span class="post-month">8月</span><br>
+    <span class="post-day">08</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo+github搭建免费个人博客
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2018/08/08/hexo-github搭建免费个人博客/" class="leancloud_visitors" data-flag-title="hexo+github搭建免费个人博客">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有次看到个开源的播放器，去该作者的博客瞧了下，发现很酷，用的是hexo搭建的，比wordpress轻量，不用安装mysql，可以托管在GitHub上,不用管理服务器，更重要的还是免费的。做开发这么久了，还没总结过，容易忘记，正好搭建自己的个人博客记录下。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>环境：windows<br>搭建过程参考：<br><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo官网</a><br><a href="https://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="noopener">hexo从零开始到搭建完整</a></p>
+<h2 id="安装Git-Bash"><a href="#安装Git-Bash" class="headerlink" title="安装Git Bash"></a>安装Git Bash</h2><p>下载后，修改安装目录一直next就好了。打开gitbash，输入命令： <strong>git version</strong>，显示版本号即安装成功.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git version 2.18.0.windows.1</span><br></pre></td></tr></table></figure>
+<p><a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git Bash下载</a></p>
+<h2 id="安装NodeJs"><a href="#安装NodeJs" class="headerlink" title="安装NodeJs"></a>安装NodeJs</h2><p>同样的下载后，修改安装目录一直next就好了。打开cmd命令行窗口，输入命令： <strong>node -v</strong>，显示版本号即安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v8.11.3</span><br></pre></td></tr></table></figure>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">NodeJs下载</a>（说明：LTS为长期支持版，Current为当前最新版，建议安装LTS版本）</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>在Git Bash依次执行以下命令安装</p>
+<h6 id="安装hexo-1"><a href="#安装hexo-1" class="headerlink" title="安装hexo"></a>安装hexo</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h6 id="切换到你想放博客的路径"><a href="#切换到你想放博客的路径" class="headerlink" title="切换到你想放博客的路径"></a>切换到你想放博客的路径</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> D:</span><br></pre></td></tr></table></figure>
+<h6 id="在当前目录下生成初始化创建博客目录-blog-，即我的博客会放在本地D-blog"><a href="#在当前目录下生成初始化创建博客目录-blog-，即我的博客会放在本地D-blog" class="headerlink" title="在当前目录下生成初始化创建博客目录/blog/，即我的博客会放在本地D:\blog"></a>在当前目录下生成初始化创建博客目录/blog/，即我的博客会放在本地D:\blog</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>初始化得到以下目录</p>
+<ul>
+<li>node_modules：是依赖包</li>
+<li>public：存放的是生成的页面</li>
+<li>scaffolds：命令生成文章等的模板</li>
+<li>source：用命令创建的各种文章</li>
+<li>themes：主题</li>
+<li>_config.yml：整个博客的配置</li>
+<li>db.json：source解析所得到的</li>
+<li>package.json：项目所需模块项目的配置信息</li>
+</ul>
+<h6 id="进入下一级目录-blog"><a href="#进入下一级目录-blog" class="headerlink" title="进入下一级目录 blog"></a>进入下一级目录 blog</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
+<h6 id="安装hexo的扩展插件"><a href="#安装hexo的扩展插件" class="headerlink" title="安装hexo的扩展插件"></a>安装hexo的扩展插件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h6 id="安装其它插件-按需安装"><a href="#安装其它插件-按需安装" class="headerlink" title="安装其它插件(按需安装)"></a>安装其它插件(按需安装)</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save  </span><br><span class="line">npm install hexo-admin --save  </span><br><span class="line">npm install hexo-generator-archive --save  </span><br><span class="line">npm install hexo-generator-feed --save  </span><br><span class="line">npm install hexo-generator-search --save  </span><br><span class="line">npm install hexo-generator-tag --save  </span><br><span class="line">npm install hexo-deployer-git --save  </span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>查看hexo版本命令：<strong>hexo -v</strong></p>
+<h2 id="配置ssh并添加至GitHub"><a href="#配置ssh并添加至GitHub" class="headerlink" title="配置ssh并添加至GitHub"></a>配置ssh并添加至GitHub</h2><p><a href="https://github.com/" target="_blank" rel="noopener">github账号注册</a><br>创建repository，名称为：<strong>用户名.github.io</strong><br>在git bash中配置信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<p>继续执行下面命令，生成密钥.生成的密钥一般在C:\Users\你的电脑用户名.ssh\下，将id_rsa.pub中的密钥添加至github（用户头像→Settings→SSH and GPG keys→New SSH key→将id_rsa.pub中的内容复制到Key文本框中，然后点击Add SSH key(添加SSH)按钮。）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<p>执行命令验证密钥：<strong>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></strong></p>
+<h2 id="hexo命令-缩写"><a href="#hexo命令-缩写" class="headerlink" title="hexo命令/缩写"></a>hexo命令/缩写</h2><p>常用命令如下，更多详细用法参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官网文档</a> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清理</span></span><br><span class="line">hexo clean</span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo g  <span class="comment">#hexo generate</span></span><br><span class="line"><span class="comment"># 启动本地服务  访问http://localhost:4000/可进行本地调试</span></span><br><span class="line">hexo s <span class="comment">#hexo server</span></span><br><span class="line"><span class="comment"># 部署博客</span></span><br><span class="line">hexo d <span class="comment">#hexo deploy</span></span><br><span class="line"><span class="comment"># 组合命令 生成、部署</span></span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h2 id="将hexo部署至GitHub"><a href="#将hexo部署至GitHub" class="headerlink" title="将hexo部署至GitHub"></a>将hexo部署至GitHub</h2><h5 id="修改配置文件D-blog-config-yml-没用过-yml文件的可以了解下"><a href="#修改配置文件D-blog-config-yml-没用过-yml文件的可以了解下" class="headerlink" title="修改配置文件D:\blog_config.yml,没用过.yml文件的可以了解下"></a>修改配置文件D:\blog_config.yml,没用过.yml文件的可以了解下</h5><p>注意<strong>key: value,冒号后面要有一个空格，不错误然配置文件会解析错误导致hexo g报错，后面的MD文章文件头中，同样需要注意</strong><br><a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">YAML 语言教程</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/k9990009/k9990009.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h5 id="本地测试，hexo-3-0把服务器独立成个别模块，需要单独安装：npm-install-hexo-server-–save"><a href="#本地测试，hexo-3-0把服务器独立成个别模块，需要单独安装：npm-install-hexo-server-–save" class="headerlink" title="本地测试，hexo 3.0把服务器独立成个别模块，需要单独安装：npm install hexo-server –save"></a>本地测试，hexo 3.0把服务器独立成个别模块，需要单独安装：<strong>npm install hexo-server –save</strong></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h5 id="部署至github-先安装插件：npm-install-hexo-deployer-git-–save，第一次部署需要输入用户和密码"><a href="#部署至github-先安装插件：npm-install-hexo-deployer-git-–save，第一次部署需要输入用户和密码" class="headerlink" title="部署至github,先安装插件：npm install hexo-deployer-git –save，第一次部署需要输入用户和密码"></a>部署至github,先安装插件：<strong>npm install hexo-deployer-git –save</strong>，第一次部署需要输入用户和密码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>部署后访问：<strong>http://你的GitHub用户名.github.io</strong>即可</p>
+<h2 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h2><p>去这找你喜欢的主题<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题</a>，使用主题不仅布局美观，而且还集成了其他功能，例如站长统计、评论、网易云音乐等等。后端写前端简直是灾难，换个主题省心省力。点击对应主题的github链接，开发者有详细使用说明的。</p>
+<h2 id="个性域名与启用https"><a href="#个性域名与启用https" class="headerlink" title="个性域名与启用https"></a>个性域名与启用https</h2><p>不用个性域名，GitHub Pages是默认使用https的（你的GitHub用户名.github.io的setting中设置GitHub Pages）。<br>使用个性域名，可使用let’s encrypt免费证书。我这就不写了，给个思路。(其实我没用过)</p>
+<h4 id="2019-03-02更新"><a href="#2019-03-02更新" class="headerlink" title="2019-03-02更新"></a>2019-03-02更新</h4><p><a href="https://www.jianshu.com/p/23b9e095c7c9" target="_blank" rel="noopener">个性域名配置参考，但不能启用https</a><br>好消息！！！现在Github Pages现在也支持个性域名启用https了，按上面可以配置个性域名，但他配置的ip不对。<br><a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">https配置参考</a><br>A解析ip必须指向下面的ip：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure></p>
+<p>然后在你的博客仓库设置里，把 <strong>Enforce HTTPS </strong>勾上。（<a href="https://www.jianshu.com/p/dca97568955e" target="_blank" rel="noopener">详细参考</a>）不能勾选请等会，如果ip解析没问题，它会给你下发签证，等会就能勾选了。勾选后，https和http的解析可能会有一小段时间失效，等会就好了。</p>
+<h2 id="hexo发表第一篇文章"><a href="#hexo发表第一篇文章" class="headerlink" title="hexo发表第一篇文章"></a>hexo发表第一篇文章</h2><p>在gitbash中，cd 至在你的博客目录,执行以下命令，生成md文件至D:\blog\source_posts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"你的文章"</span></span><br></pre></td></tr></table></figure>
+<p>文章编辑，md文件是使用的MarkDown语法,请参考<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">markdown基本语法</a><br>windows下编辑器推荐<a href="http://www.markdownpad.com/download.html" target="_blank" rel="noopener">MarkdownPad</a>,另外更新推荐Typora</p>
+<h6 id="免费图床推荐"><a href="#免费图床推荐" class="headerlink" title="免费图床推荐"></a>免费图床推荐</h6><p>新浪微博图床,推荐个<a href="https://github.com/suxiaogang/WeiboPicBed" target="_blank" rel="noopener">新浪微博图床chrome插件</a></p>
+<h2 id="创建关于页面"><a href="#创建关于页面" class="headerlink" title="创建关于页面"></a>创建关于页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"about"</span></span><br></pre></td></tr></table></figure>
+<p>修改对应主题配置文件(例如…\themes\landscape_config.yml),增加About：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Archives: /archives</span><br><span class="line">  Categories: /categories</span><br><span class="line">  Tags: /tags</span><br><span class="line">  About: /about</span><br></pre></td></tr></table></figure>
+<p>编辑…\source\about\index.md文件</p>
+<h2 id="指定404页面"><a href="#指定404页面" class="headerlink" title="指定404页面"></a>指定404页面</h2><p>在source目录下直接创建404.html，页面文件头加上如下内容即可禁止hexo g解析。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">layout: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>我的404页面如下,接入公益404：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">layout: <span class="literal">false</span></span><br><span class="line">---</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;404&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="换电脑更新博客"><a href="#换电脑更新博客" class="headerlink" title="换电脑更新博客"></a>换电脑更新博客</h2><p>这里说下我的做法，整个流程是一样的，只是不执行hexo初始化这步</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>将以下文件放入到你新电脑的博客路径(自己创建一个/blog/)下即可</p>
+<ul>
+<li>_config.yml</li>
+<li>package.json</li>
+<li>scaffolds/</li>
+<li>source/</li>
+<li>themes/</li>
+</ul>
+<h2 id="hexo使用指定git账号部署-2019-03-02更新-非必须"><a href="#hexo使用指定git账号部署-2019-03-02更新-非必须" class="headerlink" title="hexo使用指定git账号部署(2019-03-02更新,非必须)"></a>hexo使用指定git账号部署(2019-03-02更新,非必须)</h2><p>大家上班，公司可能会有类似GitLab的私服，有多个git账号怎么办呢？这时候我们就不用全局的git账号了，需要指定git账号部署。查看hexo的issue，我找到了解决方法，在_config.yml里deploy增加name和email,同时删除.deploy_git，重新编译配置git信息即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/k9990009/k9990009.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  name: k9990009</span><br><span class="line">  email: 1509596944@qq.com</span><br></pre></td></tr></table></figure></p>
+<h2 id="博客源文件备份-2019-03-02更新，非必须"><a href="#博客源文件备份-2019-03-02更新，非必须" class="headerlink" title="博客源文件备份(2019-03-02更新，非必须)"></a>博客源文件备份(2019-03-02更新，非必须)</h2><p>现在github支持私有仓库了，直接建个私有仓库，然后在根目录下备份即可。.gitignore内容如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.<span class="built_in">log</span></span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p> 第一次写博客，不对的地方请指正。欢迎分享一些实用、快捷的博客使用技巧。一些小细节可能并没有都提及，比如hexo 命令可以附带一些额外参数，需要读者自行查阅官方文档。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/08/hexo-github搭建免费个人博客/" data-id="cjt2y647z000bnovkqn7560xg" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/08/let-s-encrypt免费SSL证书申请/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          let&#39;s encrypt免费SSL证书申请
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODY5NC8xNTIyMg==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">JUST DO IT</h1>
+    <h2 class="blog-subtitle">Done is better than perfect.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://ws1.sinaimg.cn/large/006AnDiZgy1g0y0fqvvr3j304e04emx1.gif">
+    <h2 class="author">k9990009</h2>
+    <h3 class="description">Talk is cheap,Show me the code.</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>2</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>4</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/k9990009/" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 k9990009<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s13.cnzz.com/z_stat.php?id=1274378742&web_id=1274378742" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("OgUSk1BXXwke1m2JzVVzFOjd-gzGzoHsz", "SkfFw9YGv5DXvKousmCxTFzd");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.article-title').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+  </div>
+</body>
+</html>
