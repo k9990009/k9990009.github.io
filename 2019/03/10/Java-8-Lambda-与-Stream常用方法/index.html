@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Java-8-Lambda-与-Stream常用方法 | JUST DO IT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Lambda表达式是Java SE 8中一个重要的新特性。lambda表达式允许你通过表达式来代替功能接口。目的是为了代码简洁，并不什么新奇的东西，以简洁闻名的python,早有这种语法，java只不过是引进而已。Lambda表达式其实是匿名函数，很简洁，缺点是不好阅读和理解，故不建议为用新特性而用，不方便维护。一般结合Stream使用。Java 8 中的 Stream 是对集合对象功能的增强，它">
+<meta name="keywords" content="Lambda,Stream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-8-Lambda-与-Stream常用方法">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/Java-8-Lambda-与-Stream常用方法/index.html">
+<meta property="og:site_name" content="JUST DO IT">
+<meta property="og:description" content="Lambda表达式是Java SE 8中一个重要的新特性。lambda表达式允许你通过表达式来代替功能接口。目的是为了代码简洁，并不什么新奇的东西，以简洁闻名的python,早有这种语法，java只不过是引进而已。Lambda表达式其实是匿名函数，很简洁，缺点是不好阅读和理解，故不建议为用新特性而用，不方便维护。一般结合Stream使用。Java 8 中的 Stream 是对集合对象功能的增强，它">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-10T16:42:50.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java-8-Lambda-与-Stream常用方法">
+<meta name="twitter:description" content="Lambda表达式是Java SE 8中一个重要的新特性。lambda表达式允许你通过表达式来代替功能接口。目的是为了代码简洁，并不什么新奇的东西，以简洁闻名的python,早有这种语法，java只不过是引进而已。Lambda表达式其实是匿名函数，很简洁，缺点是不好阅读和理解，故不建议为用新特性而用，不方便维护。一般结合Stream使用。Java 8 中的 Stream 是对集合对象功能的增强，它">
+  
+    <link rel="alternate" href="/atom.xml" title="JUST DO IT" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://ws1.sinaimg.cn/large/006AnDiZgy1g0y0fqvvr3j304e04emx1.gif">
+    <h2 class="author">k9990009</h2>
+    <h3 class="description">Talk is cheap,Show me the code.</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>3</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>6</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Java-8-Lambda-与-Stream常用方法" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/10/Java-8-Lambda-与-Stream常用方法/" class="article-date">
+  <time class="post-time" datetime="2019-03-10T07:08:37.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br>
+    <span class="post-day">10</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java-8-Lambda-与-Stream常用方法
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Stream/">Stream</a>
+  </div>
+
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2019/03/10/Java-8-Lambda-与-Stream常用方法/" class="leancloud_visitors" data-flag-title="Java-8-Lambda-与-Stream常用方法">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Lambda表达式是Java SE 8中一个重要的新特性。lambda表达式允许你通过表达式来代替功能接口。目的是为了代码简洁，并不什么新奇的东西，以简洁闻名的python,早有这种语法，java只不过是引进而已。Lambda表达式其实是匿名函数，很简洁，缺点是不好阅读和理解，故不建议为用新特性而用，不方便维护。一般结合Stream使用。<br>Java 8 中的 Stream 是对集合对象功能的增强，它专注于对集合对象进行各种非常便利、高效的聚合操作，或者大批量数据操作。很方便的对数据处理。<br>只粗浅的项目中常用的方法，记录下，其它的不多说，上代码。<br>为了方便用了lombok,减少代码，自行了解。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentVo</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  Long id;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 年龄</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  Integer age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 姓名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 班级id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  Long classId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *专业id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  Long majorId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 第二专业id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span>  Long secondMajorId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *学分</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> BigDecimal credit;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Date createTime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaAndStreamDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//假设是查出来的数据</span></span><br><span class="line">        List&lt;StudentVo&gt; studentVoList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">//lamada循环  仅仅循环不推荐</span></span><br><span class="line">        studentVoList.forEach(</span><br><span class="line">                item -&gt; &#123;</span><br><span class="line">                    <span class="comment">//to do something</span></span><br><span class="line">                    item.getAge();</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="comment">//分组  以班级分组</span></span><br><span class="line">        Map&lt;Long, List&lt;StudentVo&gt;&gt; classGroupMap = studentVoList.stream().collect(Collectors.groupingBy(StudentVo::getClassId));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//过滤,返回为true的    筛选出有第二专业的</span></span><br><span class="line">        List&lt;StudentVo&gt; haveSecondMajorList = studentVoList.stream().filter(item -&gt; <span class="keyword">null</span> != item.getSecondMajorId()).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//set    进一步算出第二专业有哪些</span></span><br><span class="line">        Set&lt;Long&gt; secondMajorIdSet = haveSecondMajorList.stream().map(StudentVo::getSecondMajorId).collect(Collectors.toSet());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//List  取出id</span></span><br><span class="line">        List&lt;Long&gt; idList = studentVoList.stream().map(StudentVo::getId).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//BigDecimal汇总（map用于提取或转换一个元素，reduce用于计算）   学分求和</span></span><br><span class="line">        BigDecimal total = studentVoList.stream().map(StudentVo::getCredit).reduce(BigDecimal.ZERO, BigDecimal::add);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求最小  年龄最小 Optional用于防止空指针</span></span><br><span class="line">        Optional&lt;Integer&gt; minAge = studentVoList.stream().map(StudentVo::getAge).reduce(Integer::min);</span><br><span class="line"></span><br><span class="line">        minAge.get();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求最大的日期  lambda实现Comparator接口比较</span></span><br><span class="line">        studentVoList.stream().map(StudentVo::getCreateTime).max((v, k) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> v.before(k) ? -<span class="number">1</span>: <span class="number">1</span>;</span><br><span class="line">        &#125;).get();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//list转map 最后一个参数是key重复时的取值策略，保留第一个</span></span><br><span class="line">        Map&lt;Long,StudentVo&gt; studentVoMap=studentVoList.stream().collect(Collectors.toMap(StudentVo::getId,a-&gt;a,(k1, k2) -&gt; k1));</span><br><span class="line"></span><br><span class="line">        Map&lt;Long,String&gt;  nameMap=studentVoList.stream().collect(Collectors.toMap(StudentVo::getId,StudentVo::getName,(k1, k2) -&gt; k1));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//sort 按时间正向排序 业务场景，多数据源汇总后排序</span></span><br><span class="line">        List&lt;StudentVo&gt; sortList=studentVoList.stream().sorted(Comparator.comparing(StudentVo::getCreateTime,(x,y)-&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (ObjectUtils.isEmpty(x)) &#123;</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (ObjectUtils.isEmpty(y)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(x.after(y))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;)).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//只取10条</span></span><br><span class="line">      sortList=sortList.stream().limit(<span class="number">10</span>).collect(Collectors.toList());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/10/Java-8-Lambda-与-Stream常用方法/" data-id="cjt35dnk90001d4vk639mmoke" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lambda/">Lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stream/">Stream</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/08/let-s-encrypt免费SSL证书申请/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">let&#39;s encrypt免费SSL证书申请</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zODY5NC8xNTIyMg==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">JUST DO IT</h1>
+    <h2 class="blog-subtitle">Done is better than perfect.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://ws1.sinaimg.cn/large/006AnDiZgy1g0y0fqvvr3j304e04emx1.gif">
+    <h2 class="author">k9990009</h2>
+    <h3 class="description">Talk is cheap,Show me the code.</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>3</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>6</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/k9990009/" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 k9990009<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s13.cnzz.com/z_stat.php?id=1274378742&web_id=1274378742" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("OgUSk1BXXwke1m2JzVVzFOjd-gzGzoHsz", "SkfFw9YGv5DXvKousmCxTFzd");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.article-title').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+  </div>
+</body>
+</html>
